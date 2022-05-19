@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 public class Tetris extends JPanel implements ActionListener {
 
-    public static final int HEIGHT = 2000;
+    public static final int HEIGHT = 1000;
     public static final int WIDTH = HEIGHT / 2;
     public static final int UNIT_SIZE = WIDTH / 10;
     private final Font font = new Font("Comic Sans MS", Font.BOLD, 30);
@@ -17,7 +17,7 @@ public class Tetris extends JPanel implements ActionListener {
     private final int FPS = 40;
     private final int TICK_DELAY = 1000 / FPS;
     private Timer timer;
-    private int level = 10;
+    private int level = 0;
     private int ticksPassed = 0;
     private int ticksPerCell = getTicksPerCell();
     private int score = 0;
@@ -157,6 +157,10 @@ public class Tetris extends JPanel implements ActionListener {
         }
         x = WIDTH / 2 - UNIT_SIZE;
         y = 0;
+        while(isObstructed()) {
+            y -= UNIT_SIZE;
+            System.out.println(y);
+        }
         repaint();
     }
 
