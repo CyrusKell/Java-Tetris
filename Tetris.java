@@ -8,16 +8,16 @@ import java.util.Arrays;
 
 public class Tetris extends JPanel implements ActionListener {
 
-    public static final int HEIGHT = 800;
+    public static final int HEIGHT = 2000;
     public static final int WIDTH = HEIGHT / 2;
     public static final int UNIT_SIZE = WIDTH / 10;
     private final Font font = new Font("Comic Sans MS", Font.BOLD, 30);
     private final Block[] blocks = {new I(), new J(), new L(), new O(), new S(), new T(), new Z()};
-//    private final Block[] blocks = {new Secret()};
+//    private final Block[] blocks = {new Triangle()};
     private final int FPS = 40;
     private final int TICK_DELAY = 1000 / FPS;
     private Timer timer;
-    private int level = 0;
+    private int level = 10;
     private int ticksPassed = 0;
     private int ticksPerCell = getTicksPerCell();
     private int score = 0;
@@ -332,14 +332,18 @@ public class Tetris extends JPanel implements ActionListener {
 
     public void addPoints(int n) {
         switch (n) {
-            case 1 ->
+            case 1:
                 score += 40 * (level + 1);
-            case 2 ->
+                break;
+            case 2:
                 score += 100 * (level + 1);
-            case 3 ->
+                break;
+            case 3:
                 score += 300 * (level + 1);
-            case 4 ->
+                break;
+            case 4:
                 score += 1200 * (level + 1);
+                break;
         }
     }
 
@@ -743,6 +747,27 @@ class Secret extends Block {
     );
 
     public Secret() {
+        super(new Color(239, 32, 41));
+        super.setSquares(defaultSquares);
+    }
+
+}
+
+class Triangle extends Block {
+
+    private List<Square> defaultSquares = Arrays.asList(
+            new Square(-2, 1, getColor()),
+            new Square(-1, 1, getColor()),
+            new Square(-1, 0, getColor()),
+            new Square(0, 0, getColor()),
+            new Square(0, -1, getColor()),
+            new Square(1, 0, getColor()),
+            new Square(0, 1, getColor()),
+            new Square(1, 1, getColor()),
+            new Square(2, 1, getColor())
+    );
+
+    public Triangle() {
         super(new Color(239, 32, 41));
         super.setSquares(defaultSquares);
     }
