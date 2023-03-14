@@ -13,8 +13,7 @@ public class Tetris extends JPanel implements ActionListener {
     public static final int UNIT_SIZE = WIDTH / 10;
 //    public static final int UNIT_SIZE = WIDTH / 50;
     private final Font font = new Font("Comic Sans MS", Font.BOLD, 30);
-//    private final Block[] blocks = {new I(), new J(), new L(), new O(), new S(), new T(), new Z()};
-    private final Block[] blocks = {new J(), new L()};
+    private final Block[] blocks = {new I(), new J(), new L(), new O(), new S(), new T(), new Z()};
 //    private final Block[] blocks = {new Cock()};
     private final int FPS = 40;
     private final int TICK_DELAY = 1000 / FPS;
