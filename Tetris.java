@@ -11,10 +11,8 @@ public class Tetris extends JPanel implements ActionListener {
     public static final int HEIGHT = 1000;
     public static final int WIDTH = HEIGHT / 2;
     public static final int UNIT_SIZE = WIDTH / 10;
-//    public static final int UNIT_SIZE = WIDTH / 50;
     private final Font font = new Font("Comic Sans MS", Font.BOLD, 30);
     private final Block[] blocks = {new I(), new J(), new L(), new O(), new S(), new T(), new Z()};
-//    private final Block[] blocks = {new Cock()};
     private final int FPS = 40;
     private final int TICK_DELAY = 1000 / FPS;
     private Timer timer;
@@ -723,64 +721,6 @@ class Z extends Block {
     );
 
     public Z() {
-        super(new Color(239, 32, 41));
-        super.setSquares(defaultSquares);
-    }
-
-}
-
-class Cock extends Block {
-
-    private List<Square> defaultSquares = Arrays.asList(
-            new Square(-5, 7, getColor()),
-            new Square(-5, 6, getColor()),
-            new Square(-5, 5, getColor()),
-            new Square(-4, 8, getColor()),
-            new Square(-4, 4, getColor()),
-            new Square(-3, 8, getColor()),
-            new Square(-3, 3, getColor()),
-            new Square(-2, 8, getColor()),
-            new Square(-2, 2, getColor()),
-            new Square(-2, 1, getColor()),
-            new Square(-2, 0, getColor()),
-            new Square(-2, -1, getColor()),
-            new Square(-2, -2, getColor()),
-            new Square(-2, -3, getColor()),
-            new Square(-2, -4, getColor()),
-            new Square(-2, -5, getColor()),
-            new Square(-2, -6, getColor()),
-            new Square(-2, -7, getColor()),
-            new Square(-1, 8, getColor()),
-            new Square(-1, -5, getColor()),
-            new Square(-1, -8, getColor()),
-            new Square(0, 7, getColor()),
-            new Square(0, -5, getColor()),
-            new Square(0, -7, getColor()),
-            new Square(0, -8, getColor()),
-            new Square(5, 7, getColor()),
-            new Square(5, 6, getColor()),
-            new Square(5, 5, getColor()),
-            new Square(4, 8, getColor()),
-            new Square(4, 4, getColor()),
-            new Square(3, 8, getColor()),
-            new Square(3, 3, getColor()),
-            new Square(2, 8, getColor()),
-            new Square(2, 2, getColor()),
-            new Square(2, 1, getColor()),
-            new Square(2, 0, getColor()),
-            new Square(2, -1, getColor()),
-            new Square(2, -2, getColor()),
-            new Square(2, -3, getColor()),
-            new Square(2, -4, getColor()),
-            new Square(2, -5, getColor()),
-            new Square(2, -6, getColor()),
-            new Square(2, -7, getColor()),
-            new Square(1, 8, getColor()),
-            new Square(1, -5, getColor()),
-            new Square(1, -8, getColor())
-    );
-
-    public Cock() {
         super(new Color(239, 32, 41));
         super.setSquares(defaultSquares);
     }
